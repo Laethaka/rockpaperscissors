@@ -15,11 +15,11 @@
 
   <h3>Total Wins:<span id="winsCount"></span></h3>
 
-  <h3>Computer Wins:<span id="lossesCount"></span></h3>
+  <h3>Total Losses:<span id="lossesCount"></span></h3>
 
   <h3>Ties:<span id="tiesCount"></span></h3>
 
-  <h3>Winner of the last match:<span id="" ></span></h3>
+  <h3>Result of the last match:<span id="lastWin" ></span></h3>
 
   <div id="game">
 
@@ -44,29 +44,39 @@
       if (userGuess === 'p') {
         if (computerGuess === 'p') {
           ties++;
+          winner = "A tie!";
         } else if (computerGuess === 's') {
           losses++;
+          winner = "You lost!";
         } else if (computerGuess==='r') {
           wins++;
+          winner = "You won!";
         }
       } else if (userGuess === 's') {
         if (computerGuess === 'p') {
           wins++;
+          winner = "You won!";
         } else if (computerGuess === 's') {
+          winner = "A tie!";
           ties++;
         } else if (computerGuess==='r') {
+          winner = "You lost!";
           losses++;
         }
       } else if (userGuess === 'r') {
         if (computerGuess === 'p') {
+          winner = "You lost!";
           losses++;
         } else if (computerGuess === 's') {
           wins++;
+          winner = "You won!";
         } else if (computerGuess==='r') {
+          winner = "A tie!";
           ties++;
         }
       } else {
-        alert('invalid key!')
+        alert('Invalid key! Please press R, S, or P');
+        winner = "Invalid game";
       };
 
       //STILL ON KEYUP
@@ -75,6 +85,7 @@
       winsCount.textContent = wins;
       lossesCount.textContent = losses;
       tiesCount.textContent = ties;
+      lastWin.textContent = winner;
     };
   </script>
 
