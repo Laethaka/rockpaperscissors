@@ -27,30 +27,27 @@
 
   <script type="text/javascript">
     var computerChoices = ["r", "p", "s"];
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+    var winner = "";
 
     document.onkeyup = function(event) {
       var userGuess = event.key.toLowerCase();
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
       
       //CONSOLE LOGGING GUESSES
-      console.log("User guess: " + userGuess);removed alerts for computer guess // 
-      Document.writeconsole.log("Computer guess: " + computerGuess);
-      
-      var wins = 0;
-      var losses = 0;
-      var ties = 0;
-      var winner = "";
+      console.log("User guess: " + userGuess);
+      console.log("Computer guess: " + computerGuess);
       
       if (userGuess = 'p') {
+        debugger;
         if (computerGuess = 'p') {
           ties++;
-          winner = "A tie!"
         } else if (computerGuess = 's') {
           losses++;
-          winner = "Computer won!"
         } else if (computerGuess='r') {
           wins++;
-          winner = "You won!"
         }
       } else if (userGuess = 's') {
         if (computerGuess = 'p') {
