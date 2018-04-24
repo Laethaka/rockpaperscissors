@@ -21,17 +21,6 @@
 
 <h3>Overall Winner of the match: </h3>
 
-
-
-
-
-
-
-
-
-
-
-
   <div id="game">
 
   </div>
@@ -45,7 +34,7 @@
     document.onkeyup = function(event) {
 
       // Determines which key was pressed.
-      var userGuess = event.key;
+      var userGuess = event.key.toLowerCase();
 
       // Randomly chooses a choice from the options array. This is the Computer's guess.
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
@@ -56,6 +45,33 @@
       // Alerts the Computer's guess.
       alert("Computer guess: " + computerGuess);
 
+      if (userGuess = 'p') {
+        if (computerGuess = 'p') {
+          //TIE
+        } else if (computerGuess = 's') {
+          //LOSS
+        } else if (computerGuess='r') {
+          //WIN
+        }
+      } else if (userGuess = 's') {
+        if (computerGuess = 'p') {
+          //WIN
+        } else if (computerGuess = 's') {
+          //TIE
+        } else if (computerGuess='r') {
+          //LOSS
+        }
+      } else if (userGuess = 'r') {
+        if (computerGuess = 'p') {
+          //LOSS
+        } else if (computerGuess = 's') {
+          //WIN
+        } else if (computerGuess='r') {
+          //TIE
+        }
+      } else {
+        //NO RESULT
+      }
     };
   </script>
 
