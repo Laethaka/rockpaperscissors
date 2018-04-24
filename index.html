@@ -40,34 +40,32 @@
       console.log("User guess: " + userGuess);
       console.log("Computer guess: " + computerGuess);
       
-      if (userGuess = 'p') {
-        debugger;
-        if (computerGuess = 'p') {
+      if (userGuess === 'p') {
+        if (computerGuess === 'p') {
           ties++;
-        } else if (computerGuess = 's') {
+        } else if (computerGuess === 's') {
           losses++;
-        } else if (computerGuess='r') {
+        } else if (computerGuess==='r') {
           wins++;
         }
-      } else if (userGuess = 's') {
-        if (computerGuess = 'p') {
+      } else if (userGuess === 's') {
+        if (computerGuess === 'p') {
           wins++;
-        } else if (computerGuess = 's') {
+        } else if (computerGuess === 's') {
           ties++;
-        } else if (computerGuess='r') {
+        } else if (computerGuess==='r') {
           losses++;
         }
-      } else if (userGuess = 'r') {
-        if (computerGuess = 'p') {
+      } else if (userGuess === 'r') {
+        if (computerGuess === 'p') {
           losses++;
-          winner = "Computer won!"
-        } else if (computerGuess = 's') {
+        } else if (computerGuess === 's') {
           wins++;
-        } else if (computerGuess='r') {
+        } else if (computerGuess==='r') {
           ties++;
         }
       } else {
-        //alert user to pick 'r', 's', or 'p'
+        alert('invalid key!')
       }
     };
   </script>
